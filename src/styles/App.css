@@ -1,12 +1,62 @@
 h1 {
     color: #27aedb;
     text-align: center;
-    }
-    
+}
 
-button{
+button {
     color: #27aedb;
+    padding: 8px 16px;
+    border: 1px solid #27aedb;
+    background: white;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.tours {
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+}
+
+.tour {
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px #ccc;
+}
+
+.tour-img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.tour-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.show-btn {
+    border: none;
+    background: none;
+    color: #27aedb;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.remove-btn {
+    width: 100%;
     text-align: center;
-    justify-content: center;
-    align-items: center;
+    background: rgb(255, 80, 80);
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+.loading, .no-tours {
+    text-align: center;
+    margin-top: 50px;
 }
