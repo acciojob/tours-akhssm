@@ -37,7 +37,7 @@ const App = () => {
 
   if (tours.length === 0) {
     return (
-      <main className="no-tours">
+      <main id="main" className="no-tours">
         <h2>No Tours Left</h2>
         <button onClick={fetchTours} className="refresh-btn">
           Refresh
@@ -47,7 +47,7 @@ const App = () => {
   }
 
   return (
-    <main>
+    <main id="main">
       <h1>Our Tours</h1>
       <div className="underline"></div>
       <Tours tours={tours} removeTour={removeTour} />
