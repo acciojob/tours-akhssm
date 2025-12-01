@@ -3,6 +3,8 @@ import React, { useState } from "react";
 const Tour = ({ id, image, info, name, price, removeTour }) => {
   const [readMore, setReadMore] = useState(false);
 
+  const shortText = info.substring(0, 200);
+
   return (
     <article className="tour">
       <img src={image} alt={name} className="tour-img" />
@@ -14,7 +16,7 @@ const Tour = ({ id, image, info, name, price, removeTour }) => {
         </div>
 
         <p id={`tour-item-para-${id}`}>
-          {readMore ? info : `${info.substring(0, 200)}...`}
+          {readMore ? info : `${shortText}...`}
 
           <button
             id={`see-more-${id}`}
