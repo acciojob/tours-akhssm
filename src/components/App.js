@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import Tours from "./Tours";
 import Loading from "./Loading";
 import "../styles/App.css";
-
-const url = "//course-api.com/react-tours-project"; 
+import toursData from "./toursData";  // ADD THIS
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -12,8 +11,8 @@ const App = () => {
   const fetchTours = async () => {
     setLoading(true);
     try {
-      const res = await fetch(url);
-      const data = await res.json();
+
+      const data = toursData;
       setTours(data);
       setLoading(false);
     } catch (err) {
@@ -22,18 +21,16 @@ const App = () => {
     }
   };
 
+  useEffect(() => {
+    fetchTours();
+  }, []);
+
   const removeTour = (id) => {
     const newTours = tours.filter((tour) => tour.id !== id);
     setTours(newTours);
   };
 
-  useEffect(() => {
-    fetchTours();
-  }, []);
-
-  if (loading) {
-    return <Loading />;
-  }
+  if (loading) return <Loading />;
 
   if (tours.length === 0) {
     return (
